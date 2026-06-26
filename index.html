@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔎</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>DSA Search Engine</title>
+  </head>
+  <body>
+    <!-- Top nav bar (LeetCode-style) -->
+    <nav class="topbar">
+      <div class="topbar-inner">
+        <span class="topbar-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#FFA116" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Competitive Programming & DSA&nbsp;Search
+        </span>
+        <span class="topbar-badge">7500+ Problems</span>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="hero-content">
+        <h1>Find Any DSA Problem, Instantly</h1>
+        <p class="tagline">
+          Search across
+          <img src="logos/codeforces.png" alt="Codeforces" class="platform-icon" />
+          <img src="logos/codechef.png"   alt="CodeChef"   class="platform-icon" />
+          <img src="logos/leetcode.png"   alt="LeetCode"   class="platform-icon" />
+          <img src="logos/atcoder.png"    alt="AtCoder"    class="platform-icon" />
+          <img src="logos/cses.png"       alt="CSES"       class="platform-icon" />
+          — all in one place.
+        </p>
+      </div>
+
+      <form class="search-form" id="search-form">
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="#808080" stroke-width="2"/>
+            <path d="M16.5 16.5L21 21" stroke="#808080" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input
+            id="query-input"
+            class="query-input"
+            type="text"
+            placeholder="Search problems by name, tag, or topic..."
+            autocomplete="off"
+          />
+        </div>
+        <button type="submit">Search</button>
+      </form>
+
+      <p class="cta">Type a topic, tag, or title above to begin your search.</p>
+
+      <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+
+      <div id="results" class="results"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
