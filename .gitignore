@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Environment variables (secrets — never commit these)
+.env
+.env.local
+.env.*.local
+
+# Scraped data (large, regenerable — optional, see note below)
+# Backend/problems/
+# Backend/corpus/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build/output artifacts (if any get generated later)
+dist/
+build/
+
+# Puppeteer cache (if scrape.js downloads Chromium locally)
+.cache/

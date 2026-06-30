@@ -1,0 +1,21 @@
+{
+  "name": "dsa-cp-search-engine",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "merge": "node utils/merge.js",
+    "scrape": "node scrape.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "natural": "^8.1.1",
+    "puppeteer": "^25.2.1",
+    "stopword": "^3.1.5"
+  }
+}

@@ -1,0 +1,363 @@
+/* ── Tokens ───────────────────────────────────────────────────── */
+:root {
+  --bg: #1a1a1a;
+  --panel: #282828;
+  --panel-hover: #2f2f2f;
+  --border: #3a3a3a;
+  --border-hover: #4a4a4a;
+  --text: #eff1f6;
+  --text-dim: #8d8d8d;
+  --text-faint: #5a5a5a;
+  --accent: #2dd4bf;
+  --accent-light: #5eead4;
+  --accent-dark: #14b8a6;
+  --accent-tint: rgba(45, 212, 191, 0.14);
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ── Reset & Base ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+/* ── Top Nav ──────────────────────────────────────────────────── */
+.topbar {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.topbar-logo span {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.topbar-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-tint);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  border-radius: 20px;
+  padding: 4px 11px;
+  letter-spacing: 0.03em;
+}
+
+/* ── Container ────────────────────────────────────────────────── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 20px 60px;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+.hero-content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.platform-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 5px;
+  filter: brightness(0.9) saturate(0.85);
+  transition: filter 0.2s ease, transform 0.15s ease;
+  vertical-align: middle;
+}
+
+.platform-icon:hover {
+  filter: brightness(1) saturate(1);
+  transform: translateY(-2px);
+}
+
+.tagline {
+  font-size: 1rem;
+  color: var(--text-dim);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  line-height: 1.6;
+}
+
+.cta {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  text-align: center;
+  margin: 14px 0 0;
+}
+
+/* ── Search Bar ───────────────────────────────────────────────── */
+.search-form {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.search-box {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.query-input {
+  width: 100%;
+  background: var(--panel);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 0.98rem;
+  padding: 14px 16px 14px 44px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.query-input::placeholder {
+  color: var(--text-faint);
+}
+
+.query-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-tint);
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: #1a1a1a;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0 26px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+}
+
+button:hover {
+  background: var(--accent-light);
+  transform: translateY(-1px);
+}
+
+button:active {
+  background: var(--accent-dark);
+  transform: translateY(0);
+}
+
+button:focus-visible,
+.query-input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── Spinner ──────────────────────────────────────────────────── */
+.hidden {
+  display: none !important;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 36px auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Results Grid ─────────────────────────────────────────────── */
+.results {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+  margin-top: 30px;
+}
+
+/* ── Card ─────────────────────────────────────────────────────── */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 15px 17px;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  background: var(--panel-hover);
+  transform: translateY(-1px);
+}
+
+/* Featured / Top Result */
+.card.featured {
+  grid-column: 1 / -1;
+  background: var(--panel);
+  border: 1.5px solid var(--accent);
+  border-radius: 10px;
+  padding: 20px 22px;
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.08), 0 6px 24px rgba(45, 212, 191, 0.1);
+  transform: none;
+}
+
+.card.featured:hover {
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.2), 0 8px 28px rgba(45, 212, 191, 0.16);
+  transform: none;
+}
+
+.card.featured::before {
+  content: "Top Result";
+  position: absolute;
+  top: -11px;
+  left: 18px;
+  background: var(--accent);
+  color: #1a1a1a;
+  padding: 3px 11px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Card Header ──────────────────────────────────────────────── */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.platform-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 7px;
+  flex-shrink: 0;
+  filter: brightness(0.85) saturate(0.8);
+}
+
+.card:hover .platform-logo,
+.card.featured .platform-logo {
+  filter: brightness(1) saturate(1);
+}
+
+.card-title {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+
+.card-title:hover {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (min-width: 640px) {
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  h1 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .tagline {
+    font-size: 0.88rem;
+    gap: 5px;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .search-form {
+    flex-direction: column;
+  }
+  button {
+    padding: 13px;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+    border-top-color: var(--accent);
+  }
+  .card, button, .query-input {
+    transition: none;
+  }
+}
