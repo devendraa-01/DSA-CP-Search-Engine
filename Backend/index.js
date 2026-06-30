@@ -3,7 +3,7 @@ import cors from "cors";
 import fs from "fs/promises";
 import pkg from "natural";
 
-import preprocess from "./utils/preprocess.js";
+import preprocess from "./utils/preProcess.js";
 
 const { TfIdf } = pkg;
 
