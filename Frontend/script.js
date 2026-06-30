@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://dsa-cp-search-engine-1.onrender.com/";
+const API_BASE_URL = "https://dsa-cp-search-engine-1.onrender.com";
 
 const form = document.getElementById("search-form");
 const input = document.getElementById("query-input");
